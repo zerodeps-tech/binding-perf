@@ -1,0 +1,30 @@
+diff --git a/binding.gyp b/binding.gyp
+index 2232c08..4476f91 100644
+--- a/binding.gyp
++++ b/binding.gyp
+@@ -43,16 +43,21 @@
+           {
+             "cflags": [
+-              "-flto"
++              "-flto",
++              "-g",
++              "-fno-omit-frame-pointer"
+             ],
+             "cflags_cc": [
+-              "-flto"
++              "-flto",
++              "-g",
++              "-fno-omit-frame-pointer"
+             ],
+             "ldflags": [
+               "-flto",
+               "-O3",
++              "-g",
++              "-Wl,--build-id",
+               "-static-libstdc++",
+-              "-static-libgcc",
+-              "-s"
++              "-static-libgcc"
+             ]
+           }
+         ],

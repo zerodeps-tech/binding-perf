@@ -1,0 +1,9 @@
+.DS_Store
+.idea/
+node_modules/
+results/triad-*.json
+results/profiles/**/perf.data
+results/profiles/**/perf.script
+results/profiles/**/perf-report.txt
+results/ablation/**/perf.data
+results/ablation/**/isolate-*.log

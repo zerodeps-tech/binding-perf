@@ -1,0 +1,3794 @@
+{
+  "createdAt": "2026-07-26T19:05:08.355Z",
+  "system": {
+    "node": "v24.17.0",
+    "platform": "linux-x64",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+    "logicalCpus": 28,
+    "loadAvg": [
+      2.68,
+      2.24,
+      1.78
+    ]
+  },
+  "parameters": {
+    "candidate": "core-batch",
+    "testName": "headers-prepared",
+    "runs": 12,
+    "warmup": 30,
+    "duration": 15,
+    "connections": 100,
+    "pipelining": 10,
+    "workers": 4,
+    "serverCpu": 2,
+    "sampleMs": 100,
+    "jsonOut": "/tmp/binding-perf.4yOGjT/batch.json"
+  },
+  "packages": {
+    "benchkit": "0.2.0",
+    "swmCore": "4.1.1",
+    "swmUws": "0.5.7"
+  },
+  "loadGenerator": "@swarmmachina/benchkit@0.2.0",
+  "runs": [
+    {
+      "run": 1,
+      "candidateSlot": 0,
+      "rows": [
+        {
+          "id": "candidate-slot-0",
+          "role": "candidate",
+          "slot": 0,
+          "fw": "core-batch",
+          "completed": 2578070,
+          "durationMs": 15004.599283999996,
+          "rps": 171818.6504819958,
+          "latencyP50Ms": 5.788905149197099,
+          "latencyP95Ms": 5.904683252181041,
+          "latencyP99Ms": 10.909426737485182,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17285.953,
+            "cpuCorePct": 115.2043628278211,
+            "cpuPerMillionRequestsMs": 6704.9975369171525,
+            "parentEluPct": 0.09676187959288919,
+            "maxWorkerEluPct": 27.45737573779715,
+            "meanWorkerEluPct": 26.695993350186253,
+            "workerHeapUsedPeakBytes": 47267336,
+            "workerExternalPeakBytes": 33741708,
+            "workerArrayBuffersPeakBytes": 20002500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 169230336,
+                "endBytes": 169115648,
+                "peakBytes": 177618944,
+                "deltaBytes": -114688
+              },
+              "heapTotal": {
+                "startBytes": 10334208,
+                "endBytes": 10334208,
+                "peakBytes": 10334208,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8573656,
+                "endBytes": 8134136,
+                "peakBytes": 8796000,
+                "deltaBytes": -439520
+              },
+              "external": {
+                "startBytes": 2161346,
+                "endBytes": 2161346,
+                "peakBytes": 2161346,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 30373,
+                "endBytes": 23053,
+                "peakBytes": 30373,
+                "deltaBytes": -7320
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 257881,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 740,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15075.441087999992,
+            "cpuMs": 15004.182,
+            "cpuCorePct": 99.52731672934789,
+            "cpuHostPct": 3.554547026048139,
+            "eluPct": 99.55690605335862,
+            "eventLoopDelayMs": {
+              "p50": 23.068671,
+              "p90": 23.281663,
+              "p99": 23.445503,
+              "max": 23.625727
+            },
+            "memMB": {
+              "rssPeak": 70.1484375,
+              "heapUsedPeak": 10.806053161621094,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.036849315068488,
+              1.8591780821917776,
+              1.2479452054794489
+            ],
+            "loadPeak": [
+              2.14,
+              1.88,
+              1.26
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-a",
+          "completed": 2574960,
+          "durationMs": 15005.33017300001,
+          "rps": 171603.02174711757,
+          "latencyP50Ms": 5.788905149197099,
+          "latencyP95Ms": 5.904683252181041,
+          "latencyP99Ms": 11.127615272234886,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17233.045,
+            "cpuCorePct": 114.84615667443592,
+            "cpuPerMillionRequestsMs": 6692.5486221145175,
+            "parentEluPct": 0.10226497862692221,
+            "maxWorkerEluPct": 27.5771767704103,
+            "meanWorkerEluPct": 26.622545074075486,
+            "workerHeapUsedPeakBytes": 46717296,
+            "workerExternalPeakBytes": 33703208,
+            "workerArrayBuffersPeakBytes": 20023500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 169984000,
+                "endBytes": 159510528,
+                "peakBytes": 178667520,
+                "deltaBytes": -10473472
+              },
+              "heapTotal": {
+                "startBytes": 10334208,
+                "endBytes": 10334208,
+                "peakBytes": 10334208,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9174368,
+                "endBytes": 8278288,
+                "peakBytes": 9174368,
+                "deltaBytes": -896080
+              },
+              "external": {
+                "startBytes": 2161868,
+                "endBytes": 2161868,
+                "peakBytes": 2161868,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 30895,
+                "endBytes": 23053,
+                "peakBytes": 30895,
+                "deltaBytes": -7842
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 257581,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 850,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15079.256936000005,
+            "cpuMs": 15003.57,
+            "cpuCorePct": 99.49807250900201,
+            "cpuHostPct": 3.5535025896072145,
+            "eluPct": 99.52648380234925,
+            "eventLoopDelayMs": {
+              "p50": 23.068671,
+              "p90": 23.298047,
+              "p99": 23.494655,
+              "max": 23.609343
+            },
+            "memMB": {
+              "rssPeak": 69.33984375,
+              "heapUsedPeak": 10.814872741699219,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.117876712328775,
+              1.8873287671232808,
+              1.2680821917808232
+            ],
+            "loadPeak": [
+              2.13,
+              1.89,
+              1.28
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2370810,
+          "durationMs": 15007.063146,
+          "rps": 157979.61112943798,
+          "latencyP50Ms": 6.266097104680538,
+          "latencyP95Ms": 6.39141904677415,
+          "latencyP99Ms": 12.044888634774198,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16216.174,
+            "cpuCorePct": 108.05694520131527,
+            "cpuPerMillionRequestsMs": 6839.929813017493,
+            "parentEluPct": 0.09875456333901214,
+            "maxWorkerEluPct": 25.22804274248808,
+            "meanWorkerEluPct": 24.863956263176824,
+            "workerHeapUsedPeakBytes": 47303656,
+            "workerExternalPeakBytes": 33451208,
+            "workerArrayBuffersPeakBytes": 19848500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 171507712,
+                "endBytes": 161882112,
+                "peakBytes": 177541120,
+                "deltaBytes": -9625600
+              },
+              "heapTotal": {
+                "startBytes": 10334208,
+                "endBytes": 10334208,
+                "peakBytes": 10334208,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8834456,
+                "endBytes": 8390928,
+                "peakBytes": 8891184,
+                "deltaBytes": -443528
+              },
+              "external": {
+                "startBytes": 2161869,
+                "endBytes": 2161869,
+                "peakBytes": 2161869,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 30896,
+                "endBytes": 23053,
+                "peakBytes": 30896,
+                "deltaBytes": -7843
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 237142,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 610,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15085.97838,
+            "cpuMs": 15006.163,
+            "cpuCorePct": 99.47093003854617,
+            "cpuHostPct": 3.552533215662363,
+            "eluPct": 99.49960750052792,
+            "eventLoopDelayMs": {
+              "p50": 25.067519,
+              "p90": 25.313279,
+              "p99": 25.493503,
+              "max": 25.591807
+            },
+            "memMB": {
+              "rssPeak": 64.30078125,
+              "heapUsedPeak": 8.838218688964844,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0884666666666676,
+              1.890799999999992,
+              1.2808000000000002
+            ],
+            "loadPeak": [
+              2.1,
+              1.9,
+              1.29
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "candidateSlot": 0,
+      "rows": [
+        {
+          "id": "control-a-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-a",
+          "completed": 2511960,
+          "durationMs": 15006.077144999988,
+          "rps": 167396.18060919957,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 10.280196471836984,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17146.77,
+            "cpuCorePct": 114.26550613005004,
+            "cpuPerMillionRequestsMs": 6826.052166435771,
+            "parentEluPct": 0.09668041231695887,
+            "maxWorkerEluPct": 27.86178674209569,
+            "meanWorkerEluPct": 26.341702873332288,
+            "workerHeapUsedPeakBytes": 47944176,
+            "workerExternalPeakBytes": 33815208,
+            "workerArrayBuffersPeakBytes": 20055000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 170983424,
+                "endBytes": 165019648,
+                "peakBytes": 178073600,
+                "deltaBytes": -5963776
+              },
+              "heapTotal": {
+                "startBytes": 10334208,
+                "endBytes": 10334208,
+                "peakBytes": 10334208,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8940664,
+                "endBytes": 8486008,
+                "peakBytes": 8940664,
+                "deltaBytes": -454656
+              },
+              "external": {
+                "startBytes": 2161859,
+                "endBytes": 2161859,
+                "peakBytes": 2161859,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 30886,
+                "endBytes": 23053,
+                "peakBytes": 30886,
+                "deltaBytes": -7833
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 251272,
+            "requestsPerSocketWrite": 9.999677640166832,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 679,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15077.404821000004,
+            "cpuMs": 15004.191,
+            "cpuCorePct": 99.51441364167638,
+            "cpuHostPct": 3.5540862014884427,
+            "eluPct": 99.5434646427906,
+            "eventLoopDelayMs": {
+              "p50": 23.674879,
+              "p90": 23.969791,
+              "p99": 24.182783,
+              "max": 25.493503
+            },
+            "memMB": {
+              "rssPeak": 69.55859375,
+              "heapUsedPeak": 8.856704711914062,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0683999999999982,
+              1.9000000000000012,
+              1.2908666666666675
+            ],
+            "loadPeak": [
+              2.08,
+              1.9,
+              1.3
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2469880,
+          "durationMs": 15004.753540999984,
+          "rps": 164606.50241612675,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.266097104680538,
+          "latencyP99Ms": 11.808714347817839,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 15257.182,
+            "cpuCorePct": 101.68232326049385,
+            "cpuPerMillionRequestsMs": 6177.296872722562,
+            "parentEluPct": 0.09611992431204268,
+            "maxWorkerEluPct": 24.41282780979068,
+            "meanWorkerEluPct": 23.659853563677775,
+            "workerHeapUsedPeakBytes": 47730912,
+            "workerExternalPeakBytes": 33696208,
+            "workerArrayBuffersPeakBytes": 19964000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 170549248,
+                "endBytes": 160694272,
+                "peakBytes": 181284864,
+                "deltaBytes": -9854976
+              },
+              "heapTotal": {
+                "startBytes": 10334208,
+                "endBytes": 10334208,
+                "peakBytes": 10334208,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8228632,
+                "endBytes": 8547112,
+                "peakBytes": 8547112,
+                "deltaBytes": 318480
+              },
+              "external": {
+                "startBytes": 2161867,
+                "endBytes": 2161867,
+                "peakBytes": 2161867,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 23053,
+                "endBytes": 23053,
+                "peakBytes": 23053,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 247062,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 740,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15078.432426000014,
+            "cpuMs": 15005.257,
+            "cpuCorePct": 99.51470136992599,
+            "cpuHostPct": 3.5540964774973567,
+            "eluPct": 99.54624402891076,
+            "eventLoopDelayMs": {
+              "p50": 24.002559,
+              "p90": 24.297471,
+              "p99": 25.001983,
+              "max": 25.214975
+            },
+            "memMB": {
+              "rssPeak": 64.55078125,
+              "heapUsedPeak": 8.867568969726562,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.993378378378381,
+              1.8924999999999925,
+              1.3000000000000025
+            ],
+            "loadPeak": [
+              2.06,
+              1.9,
+              1.3
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-0",
+          "role": "candidate",
+          "slot": 0,
+          "fw": "core-batch",
+          "completed": 2614650,
+          "durationMs": 15004.304508000001,
+          "rps": 174259.99309770874,
+          "latencyP50Ms": 5.675397205095195,
+          "latencyP95Ms": 5.904683252181041,
+          "latencyP99Ms": 11.127615272234886,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17076.977,
+            "cpuCorePct": 113.81385249076284,
+            "cpuPerMillionRequestsMs": 6531.266899967491,
+            "parentEluPct": 0.09307536685326574,
+            "maxWorkerEluPct": 27.56210341227313,
+            "meanWorkerEluPct": 26.33309116064803,
+            "workerHeapUsedPeakBytes": 48119616,
+            "workerExternalPeakBytes": 33717208,
+            "workerArrayBuffersPeakBytes": 20002500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 171388928,
+                "endBytes": 162418688,
+                "peakBytes": 179507200,
+                "deltaBytes": -8970240
+              },
+              "heapTotal": {
+                "startBytes": 10334208,
+                "endBytes": 10334208,
+                "peakBytes": 10334208,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8288848,
+                "endBytes": 8607008,
+                "peakBytes": 8607008,
+                "deltaBytes": 318160
+              },
+              "external": {
+                "startBytes": 2161867,
+                "endBytes": 2161867,
+                "peakBytes": 2161867,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 23053,
+                "endBytes": 23053,
+                "peakBytes": 23053,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 261522,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 570,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15076.589762000018,
+            "cpuMs": 15003.196,
+            "cpuCorePct": 99.51319387766983,
+            "cpuHostPct": 3.5540426384882084,
+            "eluPct": 99.54052210048515,
+            "eventLoopDelayMs": {
+              "p50": 22.708223,
+              "p90": 22.937599,
+              "p99": 23.134207,
+              "max": 23.347199
+            },
+            "memMB": {
+              "rssPeak": 70.1484375,
+              "heapUsedPeak": 8.835411071777344,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9799999999999982,
+              1.890945945945938,
+              1.308513513513514
+            ],
+            "loadPeak": [
+              1.98,
+              1.9,
+              1.32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "candidateSlot": 0,
+      "rows": [
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2424980,
+          "durationMs": 15007.739975000004,
+          "rps": 161581.95731266323,
+          "latencyP50Ms": 6.143232455569155,
+          "latencyP95Ms": 6.39141904677415,
+          "latencyP99Ms": 12.044888634774198,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 15704.1,
+            "cpuCorePct": 104.64000593133942,
+            "cpuPerMillionRequestsMs": 6475.97093584277,
+            "parentEluPct": 0.09533112833736451,
+            "maxWorkerEluPct": 25.42478579661203,
+            "meanWorkerEluPct": 24.376515986387943,
+            "workerHeapUsedPeakBytes": 47178448,
+            "workerExternalPeakBytes": 33720708,
+            "workerArrayBuffersPeakBytes": 20002500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175083520,
+                "endBytes": 162979840,
+                "peakBytes": 180776960,
+                "deltaBytes": -12103680
+              },
+              "heapTotal": {
+                "startBytes": 10596352,
+                "endBytes": 10596352,
+                "peakBytes": 10596352,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8384328,
+                "endBytes": 8703552,
+                "peakBytes": 8703552,
+                "deltaBytes": 319224
+              },
+              "external": {
+                "startBytes": 2161866,
+                "endBytes": 2161866,
+                "peakBytes": 2161866,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 23053,
+                "endBytes": 23053,
+                "peakBytes": 23053,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 242552,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 540,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15083.011743999989,
+            "cpuMs": 15004.686,
+            "cpuCorePct": 99.48070222758298,
+            "cpuHostPct": 3.552882222413678,
+            "eluPct": 99.50984575461233,
+            "eventLoopDelayMs": {
+              "p50": 24.412159,
+              "p90": 24.723455,
+              "p99": 25.395199,
+              "max": 25.608191
+            },
+            "memMB": {
+              "rssPeak": 64.98828125,
+              "heapUsedPeak": 8.884933471679688,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9843150684931536,
+              1.9000000000000017,
+              1.3210273972602715
+            ],
+            "loadPeak": [
+              1.99,
+              1.9,
+              1.33
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-0",
+          "role": "candidate",
+          "slot": 0,
+          "fw": "core-batch",
+          "completed": 2553930,
+          "durationMs": 15006.758203000005,
+          "rps": 170185.32353572827,
+          "latencyP50Ms": 5.788905149197099,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16768.183,
+            "cpuCorePct": 111.73754366647867,
+            "cpuPerMillionRequestsMs": 6565.639230519239,
+            "parentEluPct": 0.09430274437076057,
+            "maxWorkerEluPct": 26.64741277749581,
+            "meanWorkerEluPct": 26.06548212043884,
+            "workerHeapUsedPeakBytes": 47652072,
+            "workerExternalPeakBytes": 33825708,
+            "workerArrayBuffersPeakBytes": 20209000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 174026752,
+                "endBytes": 169975808,
+                "peakBytes": 181989376,
+                "deltaBytes": -4050944
+              },
+              "heapTotal": {
+                "startBytes": 10596352,
+                "endBytes": 10596352,
+                "peakBytes": 10596352,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8424176,
+                "endBytes": 8682760,
+                "peakBytes": 8682760,
+                "deltaBytes": 258584
+              },
+              "external": {
+                "startBytes": 2170060,
+                "endBytes": 2170060,
+                "peakBytes": 2170060,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31245,
+                "endBytes": 31245,
+                "peakBytes": 31245,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 255452,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 590,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15097.670776999992,
+            "cpuMs": 15004.17,
+            "cpuCorePct": 99.38069402637636,
+            "cpuHostPct": 3.549310500942013,
+            "eluPct": 99.4091237502984,
+            "eventLoopDelayMs": {
+              "p50": 23.298047,
+              "p90": 23.527423,
+              "p99": 23.805951,
+              "max": 24.805375
+            },
+            "memMB": {
+              "rssPeak": 70.5859375,
+              "heapUsedPeak": 8.8555908203125,
+              "externalPeak": 1.999018669128418,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0810273972602666,
+              1.924109589041094,
+              1.3420547945205463
+            ],
+            "loadPeak": [
+              2.14,
+              1.94,
+              1.35
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-a",
+          "completed": 2624230,
+          "durationMs": 15008.772614999994,
+          "rps": 174846.4093177949,
+          "latencyP50Ms": 5.675397205095195,
+          "latencyP95Ms": 5.904683252181041,
+          "latencyP99Ms": 10.909426737485182,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16545.814,
+            "cpuCorePct": 110.24095323733442,
+            "cpuPerMillionRequestsMs": 6305.016709663405,
+            "parentEluPct": 0.0976695480918887,
+            "maxWorkerEluPct": 26.390948149185135,
+            "meanWorkerEluPct": 25.942990339189958,
+            "workerHeapUsedPeakBytes": 47771344,
+            "workerExternalPeakBytes": 33965708,
+            "workerArrayBuffersPeakBytes": 20251000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175783936,
+                "endBytes": 162775040,
+                "peakBytes": 181649408,
+                "deltaBytes": -13008896
+              },
+              "heapTotal": {
+                "startBytes": 10596352,
+                "endBytes": 10596352,
+                "peakBytes": 10596352,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8482600,
+                "endBytes": 8720608,
+                "peakBytes": 8720608,
+                "deltaBytes": 238008
+              },
+              "external": {
+                "startBytes": 2170054,
+                "endBytes": 2170054,
+                "peakBytes": 2170054,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31245,
+                "endBytes": 31245,
+                "peakBytes": 31245,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 262470,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 470,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15092.72589500001,
+            "cpuMs": 15004.267,
+            "cpuCorePct": 99.41389716068907,
+            "cpuHostPct": 3.5504963271674668,
+            "eluPct": 99.44398451809178,
+            "eventLoopDelayMs": {
+              "p50": 22.626303,
+              "p90": 22.888447,
+              "p99": 23.166975,
+              "max": 23.511039
+            },
+            "memMB": {
+              "rssPeak": 69.77734375,
+              "heapUsedPeak": 8.879547119140625,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.116824324324333,
+              1.9399999999999982,
+              1.3543918918918956
+            ],
+            "loadPeak": [
+              2.13,
+              1.94,
+              1.36
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "candidateSlot": 0,
+      "rows": [
+        {
+          "id": "candidate-slot-0",
+          "role": "candidate",
+          "slot": 0,
+          "fw": "core-batch",
+          "completed": 2663030,
+          "durationMs": 15006.175197000004,
+          "rps": 177462.2756991659,
+          "latencyP50Ms": 5.564114906956074,
+          "latencyP95Ms": 5.788905149197099,
+          "latencyP99Ms": 10.909426737485182,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16120.666,
+            "cpuCorePct": 107.42688118970382,
+            "cpuPerMillionRequestsMs": 6053.505217740693,
+            "parentEluPct": 0.10424050727999908,
+            "maxWorkerEluPct": 26.252330128354295,
+            "meanWorkerEluPct": 25.40968915195521,
+            "workerHeapUsedPeakBytes": 47493840,
+            "workerExternalPeakBytes": 33941208,
+            "workerArrayBuffersPeakBytes": 20198500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176001024,
+                "endBytes": 171716608,
+                "peakBytes": 181669888,
+                "deltaBytes": -4284416
+              },
+              "heapTotal": {
+                "startBytes": 10596352,
+                "endBytes": 10596352,
+                "peakBytes": 10596352,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9260760,
+                "endBytes": 8719744,
+                "peakBytes": 9260760,
+                "deltaBytes": -541016
+              },
+              "external": {
+                "startBytes": 2170060,
+                "endBytes": 2170060,
+                "peakBytes": 2170060,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39087,
+                "endBytes": 31245,
+                "peakBytes": 39087,
+                "deltaBytes": -7842
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 266374,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 710,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15081.915344999987,
+            "cpuMs": 15001.846,
+            "cpuCorePct": 99.4691036040954,
+            "cpuHostPct": 3.55246798586055,
+            "eluPct": 99.49760685010845,
+            "eventLoopDelayMs": {
+              "p50": 22.233087,
+              "p90": 22.544383,
+              "p99": 23.085055,
+              "max": 23.560191
+            },
+            "memMB": {
+              "rssPeak": 70.8046875,
+              "heapUsedPeak": 8.883323669433594,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0910738255033543,
+              1.944496644295296,
+              1.3677852348993316
+            ],
+            "loadPeak": [
+              2.1,
+              1.95,
+              1.37
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2364870,
+          "durationMs": 15005.428408000007,
+          "rps": 157600.96517732152,
+          "latencyP50Ms": 6.266097104680538,
+          "latencyP95Ms": 6.519247427709632,
+          "latencyP99Ms": 12.285786407469683,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16207.629,
+            "cpuCorePct": 108.01177120247398,
+            "cpuPerMillionRequestsMs": 6853.496809549785,
+            "parentEluPct": 0.09463228231658259,
+            "maxWorkerEluPct": 26.421483796482566,
+            "meanWorkerEluPct": 24.751059514023126,
+            "workerHeapUsedPeakBytes": 47527144,
+            "workerExternalPeakBytes": 33528208,
+            "workerArrayBuffersPeakBytes": 19761000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175915008,
+                "endBytes": 162222080,
+                "peakBytes": 181063680,
+                "deltaBytes": -13692928
+              },
+              "heapTotal": {
+                "startBytes": 10596352,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 1048576
+              },
+              "heapUsed": {
+                "startBytes": 9125048,
+                "endBytes": 8614496,
+                "peakBytes": 9291400,
+                "deltaBytes": -510552
+              },
+              "external": {
+                "startBytes": 2170056,
+                "endBytes": 2170056,
+                "peakBytes": 2170056,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39083,
+                "endBytes": 31245,
+                "peakBytes": 39083,
+                "deltaBytes": -7838
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 236543,
+            "requestsPerSocketWrite": 9.999657567545858,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 479,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15081.378557999997,
+            "cpuMs": 15005.008,
+            "cpuCorePct": 99.49361023127766,
+            "cpuHostPct": 3.553343222545631,
+            "eluPct": 99.52175900975989,
+            "eventLoopDelayMs": {
+              "p50": 25.083903,
+              "p90": 25.378815,
+              "p99": 25.608191,
+              "max": 26.083327
+            },
+            "memMB": {
+              "rssPeak": 65.42578125,
+              "heapUsedPeak": 8.893791198730469,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.070939597315432,
+              1.9499999999999946,
+              1.377852348993286
+            ],
+            "loadPeak": [
+              2.08,
+              1.95,
+              1.38
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-a",
+          "completed": 2551720,
+          "durationMs": 15004.498630999995,
+          "rps": 170063.6630888837,
+          "latencyP50Ms": 5.788905149197099,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17082.22,
+            "cpuCorePct": 113.8473228602743,
+            "cpuPerMillionRequestsMs": 6694.394369288167,
+            "parentEluPct": 0.09578732108919573,
+            "maxWorkerEluPct": 27.35584014433215,
+            "meanWorkerEluPct": 26.553083948677063,
+            "workerHeapUsedPeakBytes": 47438984,
+            "workerExternalPeakBytes": 33874708,
+            "workerArrayBuffersPeakBytes": 20181000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176250880,
+                "endBytes": 164548608,
+                "peakBytes": 182620160,
+                "deltaBytes": -11702272
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8996464,
+                "endBytes": 9234160,
+                "peakBytes": 9234160,
+                "deltaBytes": 237696
+              },
+              "external": {
+                "startBytes": 2170059,
+                "endBytes": 2170059,
+                "peakBytes": 2170059,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39086,
+                "endBytes": 39086,
+                "peakBytes": 39086,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 255228,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 560,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15078.711452000018,
+            "cpuMs": 15002.594,
+            "cpuCorePct": 99.49519922678856,
+            "cpuHostPct": 3.553399972385306,
+            "eluPct": 99.52289001229798,
+            "eventLoopDelayMs": {
+              "p50": 23.248895,
+              "p90": 23.511039,
+              "p99": 23.789567,
+              "max": 24.477695
+            },
+            "memMB": {
+              "rssPeak": 70.21484375,
+              "heapUsedPeak": 8.894950866699219,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.055410958904116,
+              1.9499999999999948,
+              1.3878767123287625
+            ],
+            "loadPeak": [
+              2.06,
+              1.95,
+              1.39
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 5,
+      "candidateSlot": 1,
+      "rows": [
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2523550,
+          "durationMs": 15006.125738000032,
+          "rps": 168167.98979696745,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16648.949,
+            "cpuCorePct": 110.94768423697694,
+            "cpuPerMillionRequestsMs": 6597.431792514513,
+            "parentEluPct": 0.09740235298879889,
+            "maxWorkerEluPct": 26.454156335569717,
+            "meanWorkerEluPct": 25.807895971585758,
+            "workerHeapUsedPeakBytes": 46985016,
+            "workerExternalPeakBytes": 33790708,
+            "workerArrayBuffersPeakBytes": 20111000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 177840128,
+                "endBytes": 170213376,
+                "peakBytes": 182255616,
+                "deltaBytes": -7626752
+              },
+              "heapTotal": {
+                "startBytes": 10858496,
+                "endBytes": 10858496,
+                "peakBytes": 10858496,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9177584,
+                "endBytes": 9407976,
+                "peakBytes": 9407976,
+                "deltaBytes": 230392
+              },
+              "external": {
+                "startBytes": 2169580,
+                "endBytes": 2169580,
+                "peakBytes": 2169580,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 38607,
+                "endBytes": 38607,
+                "peakBytes": 38607,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 252412,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 570,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15079.900217999995,
+            "cpuMs": 15004.877,
+            "cpuCorePct": 99.5024952624657,
+            "cpuHostPct": 3.5536605450880607,
+            "eluPct": 99.52810354568985,
+            "eventLoopDelayMs": {
+              "p50": 23.560191,
+              "p90": 23.789567,
+              "p99": 24.035327,
+              "max": 25.329663
+            },
+            "memMB": {
+              "rssPeak": 69.546875,
+              "heapUsedPeak": 10.834686279296875,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0600671140939633,
+              2,
+              1.468322147651006
+            ],
+            "loadPeak": [
+              2.07,
+              2,
+              1.47
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-1",
+          "role": "candidate",
+          "slot": 1,
+          "fw": "core-batch",
+          "completed": 2347570,
+          "durationMs": 15005.191387000028,
+          "rps": 156450.5203201775,
+          "latencyP50Ms": 6.266097104680538,
+          "latencyP95Ms": 6.519247427709632,
+          "latencyP99Ms": 12.531502135619077,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16200.009,
+            "cpuCorePct": 107.96269492460536,
+            "cpuPerMillionRequestsMs": 6900.756526961922,
+            "parentEluPct": 0.0892645389452577,
+            "maxWorkerEluPct": 25.729704115853963,
+            "meanWorkerEluPct": 24.441482869448436,
+            "workerHeapUsedPeakBytes": 47924840,
+            "workerExternalPeakBytes": 33619208,
+            "workerArrayBuffersPeakBytes": 19936000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175738880,
+                "endBytes": 178540544,
+                "peakBytes": 182571008,
+                "deltaBytes": 2801664
+              },
+              "heapTotal": {
+                "startBytes": 10858496,
+                "endBytes": 10858496,
+                "peakBytes": 10858496,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8963768,
+                "endBytes": 9179632,
+                "peakBytes": 9179632,
+                "deltaBytes": 215864
+              },
+              "external": {
+                "startBytes": 2162833,
+                "endBytes": 2162833,
+                "peakBytes": 2162833,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31860,
+                "endBytes": 31860,
+                "peakBytes": 31860,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 234827,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 700,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15075.717233000003,
+            "cpuMs": 15005.254,
+            "cpuCorePct": 99.53260443990179,
+            "cpuHostPct": 3.5547358728536356,
+            "eluPct": 99.56161548170172,
+            "eventLoopDelayMs": {
+              "p50": 25.264127,
+              "p90": 25.509887,
+              "p99": 25.690111,
+              "max": 25.788415
+            },
+            "memMB": {
+              "rssPeak": 69.5703125,
+              "heapUsedPeak": 10.798370361328125,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.048322147651014,
+              2,
+              1.4783221476510031
+            ],
+            "loadPeak": [
+              2.05,
+              2,
+              1.48
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2524640,
+          "durationMs": 15004.836833000008,
+          "rps": 168255.07855224263,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 8.60200853201512,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16580.686,
+            "cpuCorePct": 110.50227459677697,
+            "cpuPerMillionRequestsMs": 6567.544679637494,
+            "parentEluPct": 0.10127623886911857,
+            "maxWorkerEluPct": 26.705252309607513,
+            "meanWorkerEluPct": 25.81630620060999,
+            "workerHeapUsedPeakBytes": 47199256,
+            "workerExternalPeakBytes": 33685708,
+            "workerArrayBuffersPeakBytes": 19939500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 174391296,
+                "endBytes": 177287168,
+                "peakBytes": 181542912,
+                "deltaBytes": 2895872
+              },
+              "heapTotal": {
+                "startBytes": 10858496,
+                "endBytes": 10858496,
+                "peakBytes": 10858496,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 8829760,
+                "endBytes": 9055848,
+                "peakBytes": 9055848,
+                "deltaBytes": 226088
+              },
+              "external": {
+                "startBytes": 2170656,
+                "endBytes": 2170656,
+                "peakBytes": 2170656,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31287,
+                "endBytes": 31287,
+                "peakBytes": 31287,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 252542,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 780,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15078.111420999994,
+            "cpuMs": 15004.017,
+            "cpuCorePct": 99.50859614356743,
+            "cpuHostPct": 3.5538784336988365,
+            "eluPct": 99.53819416742334,
+            "eventLoopDelayMs": {
+              "p50": 23.543807,
+              "p90": 23.904255,
+              "p99": 24.215551,
+              "max": 24.297471
+            },
+            "memMB": {
+              "rssPeak": 69.3203125,
+              "heapUsedPeak": 8.761451721191406,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.100201342281889,
+              2.0167785234899336,
+              1.49020134228188
+            ],
+            "loadPeak": [
+              2.12,
+              2.02,
+              1.5
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 6,
+      "candidateSlot": 1,
+      "rows": [
+        {
+          "id": "candidate-slot-1",
+          "role": "candidate",
+          "slot": 1,
+          "fw": "core-batch",
+          "completed": 2378060,
+          "durationMs": 15004.820729999978,
+          "rps": 158486.3986575602,
+          "latencyP50Ms": 6.266097104680538,
+          "latencyP95Ms": 6.39141904677415,
+          "latencyP99Ms": 12.285786407469683,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 15731.682,
+            "cpuCorePct": 104.84418496614738,
+            "cpuPerMillionRequestsMs": 6615.342758382884,
+            "parentEluPct": 0.09549946945388332,
+            "maxWorkerEluPct": 24.83061511455456,
+            "meanWorkerEluPct": 24.167412971569835,
+            "workerHeapUsedPeakBytes": 47675272,
+            "workerExternalPeakBytes": 33640208,
+            "workerArrayBuffersPeakBytes": 19999000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175190016,
+                "endBytes": 167038976,
+                "peakBytes": 181772288,
+                "deltaBytes": -8151040
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 11120640,
+                "peakBytes": 11120640,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9474280,
+                "endBytes": 8972816,
+                "peakBytes": 9614248,
+                "deltaBytes": -501464
+              },
+              "external": {
+                "startBytes": 2170099,
+                "endBytes": 2170099,
+                "peakBytes": 2170099,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39126,
+                "endBytes": 31287,
+                "peakBytes": 39126,
+                "deltaBytes": -7839
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 237895,
+            "requestsPerSocketWrite": 9.999962168183442,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 881,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15074.590999000007,
+            "cpuMs": 15005.039,
+            "cpuCorePct": 99.53861435441519,
+            "cpuHostPct": 3.554950512657685,
+            "eluPct": 99.56894474472443,
+            "eventLoopDelayMs": {
+              "p50": 24.887295,
+              "p90": 25.214975,
+              "p99": 25.591807,
+              "max": 25.837567
+            },
+            "memMB": {
+              "rssPeak": 70.0390625,
+              "heapUsedPeak": 8.828086853027344,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0864625850340164,
+              2.014897959183669,
+              1.5
+            ],
+            "loadPeak": [
+              2.1,
+              2.02,
+              1.5
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2523440,
+          "durationMs": 15003.656909000012,
+          "rps": 168188.33003881227,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16748.183,
+            "cpuCorePct": 111.62733926522625,
+            "cpuPerMillionRequestsMs": 6637.044272897315,
+            "parentEluPct": 0.10045163168915508,
+            "maxWorkerEluPct": 26.598388000031175,
+            "meanWorkerEluPct": 25.77135145003988,
+            "workerHeapUsedPeakBytes": 47122016,
+            "workerExternalPeakBytes": 33804708,
+            "workerArrayBuffersPeakBytes": 20090000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176304128,
+                "endBytes": 162930688,
+                "peakBytes": 182087680,
+                "deltaBytes": -13373440
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 11120640,
+                "peakBytes": 11120640,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9347680,
+                "endBytes": 9588288,
+                "peakBytes": 9588288,
+                "deltaBytes": 240608
+              },
+              "external": {
+                "startBytes": 2170084,
+                "endBytes": 2170084,
+                "peakBytes": 2170084,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39111,
+                "endBytes": 39111,
+                "peakBytes": 39111,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 252411,
+            "requestsPerSocketWrite": 9.999893031603218,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 643,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15077.614703,
+            "cpuMs": 15004.748,
+            "cpuCorePct": 99.51672260874592,
+            "cpuHostPct": 3.554168664598069,
+            "eluPct": 99.54755404265046,
+            "eventLoopDelayMs": {
+              "p50": 23.511039,
+              "p90": 23.937023,
+              "p99": 24.166399,
+              "max": 24.297471
+            },
+            "memMB": {
+              "rssPeak": 69.3203125,
+              "heapUsedPeak": 8.854537963867188,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0663513513513507,
+              2.0099999999999953,
+              1.5084459459459432
+            ],
+            "loadPeak": [
+              2.08,
+              2.01,
+              1.51
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2468710,
+          "durationMs": 15006.89293500001,
+          "rps": 164505.07181552023,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16918.811,
+            "cpuCorePct": 112.74026591167913,
+            "cpuPerMillionRequestsMs": 6853.300306637881,
+            "parentEluPct": 0.10705148843387469,
+            "maxWorkerEluPct": 26.280327970655552,
+            "meanWorkerEluPct": 25.787618593090986,
+            "workerHeapUsedPeakBytes": 47615480,
+            "workerExternalPeakBytes": 33311208,
+            "workerArrayBuffersPeakBytes": 19568500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175730688,
+                "endBytes": 164732928,
+                "peakBytes": 183513088,
+                "deltaBytes": -10997760
+              },
+              "heapTotal": {
+                "startBytes": 12169216,
+                "endBytes": 12169216,
+                "peakBytes": 12169216,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9087016,
+                "endBytes": 9303560,
+                "peakBytes": 9303560,
+                "deltaBytes": 216544
+              },
+              "external": {
+                "startBytes": 2162848,
+                "endBytes": 2162848,
+                "peakBytes": 2162848,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31875,
+                "endBytes": 31875,
+                "peakBytes": 31875,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 246922,
+            "requestsPerSocketWrite": 9.999890653728707,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 483,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15081.645348999999,
+            "cpuMs": 15004.55,
+            "cpuCorePct": 99.48881340718498,
+            "cpuHostPct": 3.5531719073994634,
+            "eluPct": 99.51671214638498,
+            "eventLoopDelayMs": {
+              "p50": 24.084479,
+              "p90": 24.297471,
+              "p99": 24.526847,
+              "max": 25.165823
+            },
+            "memMB": {
+              "rssPeak": 69.765625,
+              "heapUsedPeak": 8.8602294921875,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.009864864864868,
+              2.0047972972972974,
+              1.5152027027027026
+            ],
+            "loadPeak": [
+              2.06,
+              2.01,
+              1.52
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 7,
+      "candidateSlot": 1,
+      "rows": [
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2402610,
+          "durationMs": 15006.930954999989,
+          "rps": 160100.0235960639,
+          "latencyP50Ms": 6.143232455569155,
+          "latencyP95Ms": 6.39141904677415,
+          "latencyP99Ms": 10.909426737485182,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17354.534,
+            "cpuCorePct": 115.64345869278381,
+            "cpuPerMillionRequestsMs": 7223.200602677921,
+            "parentEluPct": 0.0969602515898646,
+            "maxWorkerEluPct": 28.38324789760146,
+            "meanWorkerEluPct": 26.85519338221241,
+            "workerHeapUsedPeakBytes": 47487288,
+            "workerExternalPeakBytes": 33668208,
+            "workerArrayBuffersPeakBytes": 20002500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 177537024,
+                "endBytes": 166690816,
+                "peakBytes": 182022144,
+                "deltaBytes": -10846208
+              },
+              "heapTotal": {
+                "startBytes": 12169216,
+                "endBytes": 11120640,
+                "peakBytes": 12169216,
+                "deltaBytes": -1048576
+              },
+              "heapUsed": {
+                "startBytes": 9693968,
+                "endBytes": 9166600,
+                "peakBytes": 9693968,
+                "deltaBytes": -527368
+              },
+              "external": {
+                "startBytes": 2170686,
+                "endBytes": 2170686,
+                "peakBytes": 2170686,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39713,
+                "endBytes": 31287,
+                "peakBytes": 39713,
+                "deltaBytes": -8426
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 240331,
+            "requestsPerSocketWrite": 9.999850206590079,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 664,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15086.366288999998,
+            "cpuMs": 15004.369,
+            "cpuCorePct": 99.45648085543446,
+            "cpuHostPct": 3.5520171734083736,
+            "eluPct": 99.48485190195406,
+            "eventLoopDelayMs": {
+              "p50": 24.788991,
+              "p90": 25.001983,
+              "p99": 25.231359,
+              "max": 25.362431
+            },
+            "memMB": {
+              "rssPeak": 69.7578125,
+              "heapUsedPeak": 8.860542297363281,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9752739726027373,
+              2,
+              1.521986301369865
+            ],
+            "loadPeak": [
+              1.98,
+              2,
+              1.53
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2441420,
+          "durationMs": 15005.049439000024,
+          "rps": 162706.56154283904,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.266097104680538,
+          "latencyP99Ms": 11.577170929233178,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17036.531,
+            "cpuCorePct": 113.53865289986913,
+            "cpuPerMillionRequestsMs": 6978.123796806776,
+            "parentEluPct": 0.0991607688062501,
+            "maxWorkerEluPct": 26.999220410411784,
+            "meanWorkerEluPct": 25.872842084740146,
+            "workerHeapUsedPeakBytes": 47656112,
+            "workerExternalPeakBytes": 33615708,
+            "workerArrayBuffersPeakBytes": 20013000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175661056,
+                "endBytes": 166572032,
+                "peakBytes": 182427648,
+                "deltaBytes": -9089024
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 11120640,
+                "peakBytes": 11120640,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9552952,
+                "endBytes": 9063616,
+                "peakBytes": 9723944,
+                "deltaBytes": -489336
+              },
+              "external": {
+                "startBytes": 2170082,
+                "endBytes": 2170082,
+                "peakBytes": 2170082,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39109,
+                "endBytes": 31287,
+                "peakBytes": 39109,
+                "deltaBytes": -7822
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 244208,
+            "requestsPerSocketWrite": 9.999705169363821,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 588,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15078.063053999998,
+            "cpuMs": 15004.739,
+            "cpuCorePct": 99.51370375798669,
+            "cpuHostPct": 3.5540608484995246,
+            "eluPct": 99.54219754688481,
+            "eventLoopDelayMs": {
+              "p50": 24.412159,
+              "p90": 24.641535,
+              "p99": 24.772607,
+              "max": 24.920063
+            },
+            "memMB": {
+              "rssPeak": 69.984375,
+              "heapUsedPeak": 8.870170593261719,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.979999999999998,
+              2,
+              1.530000000000001
+            ],
+            "loadPeak": [
+              1.98,
+              2,
+              1.53
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-1",
+          "role": "candidate",
+          "slot": 1,
+          "fw": "core-batch",
+          "completed": 2370160,
+          "durationMs": 15007.748449000006,
+          "rps": 157929.08630194477,
+          "latencyP50Ms": 6.266097104680538,
+          "latencyP95Ms": 6.519247427709632,
+          "latencyP99Ms": 12.044888634774198,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 15761.686,
+            "cpuCorePct": 105.0236553042054,
+            "cpuPerMillionRequestsMs": 6650.051473318256,
+            "parentEluPct": 0.09476517216087173,
+            "maxWorkerEluPct": 24.884992461666695,
+            "meanWorkerEluPct": 24.112071339347786,
+            "workerHeapUsedPeakBytes": 47672024,
+            "workerExternalPeakBytes": 33475708,
+            "workerArrayBuffersPeakBytes": 19873000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176463872,
+                "endBytes": 161185792,
+                "peakBytes": 182013952,
+                "deltaBytes": -15278080
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 11120640,
+                "peakBytes": 11120640,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9445824,
+                "endBytes": 9681280,
+                "peakBytes": 9681280,
+                "deltaBytes": 235456
+              },
+              "external": {
+                "startBytes": 2170080,
+                "endBytes": 2170080,
+                "peakBytes": 2170080,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39107,
+                "endBytes": 39107,
+                "peakBytes": 39107,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 237066,
+            "requestsPerSocketWrite": 9.999582394776139,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 401,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15081.503762999986,
+            "cpuMs": 15003.813,
+            "cpuCorePct": 99.48486063312475,
+            "cpuHostPct": 3.553030736897312,
+            "eluPct": 99.51265624048698,
+            "eventLoopDelayMs": {
+              "p50": 25.083903,
+              "p90": 25.346047,
+              "p99": 25.559039,
+              "max": 25.821183
+            },
+            "memMB": {
+              "rssPeak": 70.0390625,
+              "heapUsedPeak": 8.841598510742188,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9887333333333375,
+              2,
+              1.5387333333333315
+            ],
+            "loadPeak": [
+              1.99,
+              2,
+              1.54
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 8,
+      "candidateSlot": 1,
+      "rows": [
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2468070,
+          "durationMs": 15005.466773000022,
+          "rps": 164478.0557203928,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.808714347817839,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16816.647,
+            "cpuCorePct": 112.07013586714218,
+            "cpuPerMillionRequestsMs": 6813.683161336591,
+            "parentEluPct": 0.08856200666562003,
+            "maxWorkerEluPct": 26.98755496473319,
+            "meanWorkerEluPct": 25.953332346300275,
+            "workerHeapUsedPeakBytes": 47960960,
+            "workerExternalPeakBytes": 33864208,
+            "workerArrayBuffersPeakBytes": 20170500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 173617152,
+                "endBytes": 174469120,
+                "peakBytes": 180301824,
+                "deltaBytes": 851968
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 11120640,
+                "peakBytes": 11120640,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9175704,
+                "endBytes": 9397120,
+                "peakBytes": 9397120,
+                "deltaBytes": 221416
+              },
+              "external": {
+                "startBytes": 2162834,
+                "endBytes": 2162834,
+                "peakBytes": 2162834,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31861,
+                "endBytes": 31861,
+                "peakBytes": 31861,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 246887,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 800,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15078.805132999987,
+            "cpuMs": 15003.879,
+            "cpuCorePct": 99.50310298237086,
+            "cpuHostPct": 3.5536822493703877,
+            "eluPct": 99.52957061701503,
+            "eventLoopDelayMs": {
+              "p50": 24.035327,
+              "p90": 24.330239,
+              "p99": 24.575999,
+              "max": 24.756223
+            },
+            "memMB": {
+              "rssPeak": 70.421875,
+              "heapUsedPeak": 8.8739013671875,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9900000000000042,
+              2,
+              1.54871621621622
+            ],
+            "loadPeak": [
+              1.99,
+              2,
+              1.55
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-2",
+          "role": "control",
+          "slot": 2,
+          "fw": "core-off-b",
+          "completed": 2505550,
+          "durationMs": 15004.785585000005,
+          "rps": 166983.39245212206,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.127615272234886,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16974.805,
+            "cpuCorePct": 113.12927401621377,
+            "cpuPerMillionRequestsMs": 6774.881762487278,
+            "parentEluPct": 0.09500277345274372,
+            "maxWorkerEluPct": 26.959006110036764,
+            "meanWorkerEluPct": 26.27327709110346,
+            "workerHeapUsedPeakBytes": 47302368,
+            "workerExternalPeakBytes": 33734708,
+            "workerArrayBuffersPeakBytes": 19967500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 174866432,
+                "endBytes": 167219200,
+                "peakBytes": 181026816,
+                "deltaBytes": -7647232
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 11120640,
+                "peakBytes": 11120640,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9773696,
+                "endBytes": 9270104,
+                "peakBytes": 9808848,
+                "deltaBytes": -503592
+              },
+              "external": {
+                "startBytes": 2170652,
+                "endBytes": 2170652,
+                "peakBytes": 2170652,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39679,
+                "endBytes": 31287,
+                "peakBytes": 39679,
+                "deltaBytes": -8392
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 250633,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 780,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15077.869588000001,
+            "cpuMs": 15004.355,
+            "cpuCorePct": 99.51243385167285,
+            "cpuHostPct": 3.5540154947026017,
+            "eluPct": 99.54199895064575,
+            "eventLoopDelayMs": {
+              "p50": 23.724031,
+              "p90": 23.986175,
+              "p99": 24.248319,
+              "max": 25.247743
+            },
+            "memMB": {
+              "rssPeak": 69.9765625,
+              "heapUsedPeak": 8.877548217773438,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9900000000000042,
+              2,
+              1.5555033557046984
+            ],
+            "loadPeak": [
+              1.99,
+              2,
+              1.56
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-1",
+          "role": "candidate",
+          "slot": 1,
+          "fw": "core-batch",
+          "completed": 2402780,
+          "durationMs": 15003.725836000056,
+          "rps": 160145.55492841324,
+          "latencyP50Ms": 6.143232455569155,
+          "latencyP95Ms": 6.39141904677415,
+          "latencyP99Ms": 12.044888634774198,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 15649.271,
+            "cpuCorePct": 104.30256571638373,
+            "cpuPerMillionRequestsMs": 6512.985375273642,
+            "parentEluPct": 0.09574697170777101,
+            "maxWorkerEluPct": 24.894926955944115,
+            "meanWorkerEluPct": 24.086097233688932,
+            "workerHeapUsedPeakBytes": 47073768,
+            "workerExternalPeakBytes": 33689208,
+            "workerArrayBuffersPeakBytes": 19971000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 174051328,
+                "endBytes": 162770944,
+                "peakBytes": 181092352,
+                "deltaBytes": -11280384
+              },
+              "heapTotal": {
+                "startBytes": 11120640,
+                "endBytes": 12169216,
+                "peakBytes": 12169216,
+                "deltaBytes": 1048576
+              },
+              "heapUsed": {
+                "startBytes": 9649080,
+                "endBytes": 9157472,
+                "peakBytes": 9818520,
+                "deltaBytes": -491608
+              },
+              "external": {
+                "startBytes": 2170083,
+                "endBytes": 2170083,
+                "peakBytes": 2170083,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39110,
+                "endBytes": 31287,
+                "peakBytes": 39110,
+                "deltaBytes": -7823
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 240364,
+            "requestsPerSocketWrite": 9.999700454310961,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 788,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15079.007140000002,
+            "cpuMs": 15004.948,
+            "cpuCorePct": 99.50885930809366,
+            "cpuHostPct": 3.5538878324319163,
+            "eluPct": 99.53683095614471,
+            "eventLoopDelayMs": {
+              "p50": 24.690687,
+              "p90": 24.969215,
+              "p99": 25.247743,
+              "max": 25.313279
+            },
+            "memMB": {
+              "rssPeak": 70.4765625,
+              "heapUsedPeak": 8.858917236328125,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              1.9988275862068965,
+              2,
+              1.562206896551724
+            ],
+            "loadPeak": [
+              2,
+              2,
+              1.57
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 9,
+      "candidateSlot": 2,
+      "rows": [
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2468300,
+          "durationMs": 15003.859441000037,
+          "rps": 164511.0052987462,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.266097104680538,
+          "latencyP99Ms": 11.808714347817839,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17023.911,
+            "cpuCorePct": 113.46354627583291,
+            "cpuPerMillionRequestsMs": 6897.018595794676,
+            "parentEluPct": 0.09494122935907104,
+            "maxWorkerEluPct": 26.46383487414009,
+            "meanWorkerEluPct": 26.268572630755983,
+            "workerHeapUsedPeakBytes": 48076576,
+            "workerExternalPeakBytes": 33650708,
+            "workerArrayBuffersPeakBytes": 19964000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176521216,
+                "endBytes": 173961216,
+                "peakBytes": 182886400,
+                "deltaBytes": -2560000
+              },
+              "heapTotal": {
+                "startBytes": 11382784,
+                "endBytes": 11382784,
+                "peakBytes": 11382784,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9936720,
+                "endBytes": 9401616,
+                "peakBytes": 10103656,
+                "deltaBytes": -535104
+              },
+              "external": {
+                "startBytes": 2169622,
+                "endBytes": 2169622,
+                "peakBytes": 2169622,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 38649,
+                "endBytes": 31329,
+                "peakBytes": 38649,
+                "deltaBytes": -7320
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 246917,
+            "requestsPerSocketWrite": 9.999817752524127,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 825,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15081.765279999992,
+            "cpuMs": 15006.704,
+            "cpuCorePct": 99.50230441459308,
+            "cpuHostPct": 3.5536537290926105,
+            "eluPct": 99.52794153587523,
+            "eventLoopDelayMs": {
+              "p50": 24.068095,
+              "p90": 24.313855,
+              "p99": 24.575999,
+              "max": 25.214975
+            },
+            "memMB": {
+              "rssPeak": 69.96875,
+              "heapUsedPeak": 10.819602966308594,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.125067567567567,
+              2.038378378378379,
+              1.6291891891891863
+            ],
+            "loadPeak": [
+              2.14,
+              2.04,
+              1.63
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-b",
+          "completed": 2528000,
+          "durationMs": 15005.688241000054,
+          "rps": 168469.4470122832,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 11.127615272234886,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16998.017,
+            "cpuCorePct": 113.27715681548216,
+            "cpuPerMillionRequestsMs": 6723.899129746835,
+            "parentEluPct": 0.09133178758541587,
+            "maxWorkerEluPct": 27.36872359154214,
+            "meanWorkerEluPct": 26.632563234107696,
+            "workerHeapUsedPeakBytes": 47766944,
+            "workerExternalPeakBytes": 33762708,
+            "workerArrayBuffersPeakBytes": 20135500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176746496,
+                "endBytes": 164200448,
+                "peakBytes": 182501376,
+                "deltaBytes": -12546048
+              },
+              "heapTotal": {
+                "startBytes": 11382784,
+                "endBytes": 11382784,
+                "peakBytes": 11382784,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9781832,
+                "endBytes": 10017440,
+                "peakBytes": 10017440,
+                "deltaBytes": 235608
+              },
+              "external": {
+                "startBytes": 2170142,
+                "endBytes": 2170142,
+                "peakBytes": 2170142,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39169,
+                "endBytes": 39169,
+                "peakBytes": 39169,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 252855,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 550,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15079.545270999995,
+            "cpuMs": 15005.639,
+            "cpuCorePct": 99.50989058574513,
+            "cpuHostPct": 3.5539246637766113,
+            "eluPct": 99.5366892154581,
+            "eventLoopDelayMs": {
+              "p50": 23.592959,
+              "p90": 23.855103,
+              "p99": 24.035327,
+              "max": 24.526847
+            },
+            "memMB": {
+              "rssPeak": 68.9140625,
+              "heapUsedPeak": 10.741119384765625,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0306000000000015,
+              2.0214666666666674,
+              1.629999999999997
+            ],
+            "loadPeak": [
+              2.12,
+              2.04,
+              1.63
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-2",
+          "role": "candidate",
+          "slot": 2,
+          "fw": "core-batch",
+          "completed": 2507820,
+          "durationMs": 15007.078983000014,
+          "rps": 167109.1358178932,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.577170929233178,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16962.143,
+            "cpuCorePct": 113.02761196375843,
+            "cpuPerMillionRequestsMs": 6763.7003453198395,
+            "parentEluPct": 0.08825698788856035,
+            "maxWorkerEluPct": 26.88851118245,
+            "meanWorkerEluPct": 25.94417038640578,
+            "workerHeapUsedPeakBytes": 47413168,
+            "workerExternalPeakBytes": 33703208,
+            "workerArrayBuffersPeakBytes": 19953500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175812608,
+                "endBytes": 167059456,
+                "peakBytes": 181297152,
+                "deltaBytes": -8753152
+              },
+              "heapTotal": {
+                "startBytes": 11382784,
+                "endBytes": 11382784,
+                "peakBytes": 11382784,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9512584,
+                "endBytes": 9742440,
+                "peakBytes": 9742440,
+                "deltaBytes": 229856
+              },
+              "external": {
+                "startBytes": 2162896,
+                "endBytes": 2162896,
+                "peakBytes": 2162896,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31923,
+                "endBytes": 31923,
+                "peakBytes": 31923,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 250849,
+            "requestsPerSocketWrite": 9.999677096580013,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 589,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15079.040945999994,
+            "cpuMs": 15006.32,
+            "cpuCorePct": 99.51773493910908,
+            "cpuHostPct": 3.5542048192538958,
+            "eluPct": 99.54295280628894,
+            "eventLoopDelayMs": {
+              "p50": 23.674879,
+              "p90": 23.937023,
+              "p99": 24.150015,
+              "max": 24.264703
+            },
+            "memMB": {
+              "rssPeak": 66.83203125,
+              "heapUsedPeak": 8.807807922363281,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0652666666666604,
+              2.0319999999999996,
+              1.6420666666666655
+            ],
+            "loadPeak": [
+              2.1,
+              2.04,
+              1.65
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 10,
+      "candidateSlot": 2,
+      "rows": [
+        {
+          "id": "control-b-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-b",
+          "completed": 2531880,
+          "durationMs": 15005.153760000016,
+          "rps": 168734.02568851766,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.022776917224663,
+          "latencyP99Ms": 9.311090675647554,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16675.931,
+            "cpuCorePct": 111.13468923226803,
+            "cpuPerMillionRequestsMs": 6586.382845948466,
+            "parentEluPct": 0.09426698499672596,
+            "maxWorkerEluPct": 26.797738980066732,
+            "meanWorkerEluPct": 25.77570886173013,
+            "workerHeapUsedPeakBytes": 47356232,
+            "workerExternalPeakBytes": 33755708,
+            "workerArrayBuffersPeakBytes": 19883500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175091712,
+                "endBytes": 177635328,
+                "peakBytes": 181297152,
+                "deltaBytes": 2543616
+              },
+              "heapTotal": {
+                "startBytes": 11382784,
+                "endBytes": 11382784,
+                "peakBytes": 11382784,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 10115664,
+                "endBytes": 9607272,
+                "peakBytes": 10156800,
+                "deltaBytes": -508392
+              },
+              "external": {
+                "startBytes": 2170738,
+                "endBytes": 2170738,
+                "peakBytes": 2170738,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39765,
+                "endBytes": 31329,
+                "peakBytes": 39765,
+                "deltaBytes": -8436
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 253254,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 660,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15087.926439999981,
+            "cpuMs": 15003.75,
+            "cpuCorePct": 99.44209404562831,
+            "cpuHostPct": 3.5515033587724396,
+            "eluPct": 99.46676802102164,
+            "eventLoopDelayMs": {
+              "p50": 23.445503,
+              "p90": 23.822335,
+              "p99": 24.068095,
+              "max": 24.248319
+            },
+            "memMB": {
+              "rssPeak": 69.1328125,
+              "heapUsedPeak": 9.863357543945312,
+              "externalPeak": 1.999018669128418,
+              "arrayBuffersPeak": 0.02210712432861328
+            },
+            "loadAvg": [
+              2.077905405405407,
+              2.033986486486484,
+              1.650000000000004
+            ],
+            "loadPeak": [
+              2.09,
+              2.04,
+              1.65
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-2",
+          "role": "candidate",
+          "slot": 2,
+          "fw": "core-batch",
+          "completed": 2466910,
+          "durationMs": 15003.998038000078,
+          "rps": 164416.84368074077,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.266097104680538,
+          "latencyP99Ms": 11.577170929233178,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16708.531,
+            "cpuCorePct": 111.36052509259807,
+            "cpuPerMillionRequestsMs": 6773.060630505369,
+            "parentEluPct": 0.09352816200446301,
+            "maxWorkerEluPct": 27.228720915025985,
+            "meanWorkerEluPct": 25.79806558023151,
+            "workerHeapUsedPeakBytes": 47291240,
+            "workerExternalPeakBytes": 33713708,
+            "workerArrayBuffersPeakBytes": 20083000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175939584,
+                "endBytes": 167268352,
+                "peakBytes": 181817344,
+                "deltaBytes": -8671232
+              },
+              "heapTotal": {
+                "startBytes": 11382784,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 262144
+              },
+              "heapUsed": {
+                "startBytes": 9989504,
+                "endBytes": 9503896,
+                "peakBytes": 10155376,
+                "deltaBytes": -485608
+              },
+              "external": {
+                "startBytes": 2170143,
+                "endBytes": 2170143,
+                "peakBytes": 2170143,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39170,
+                "endBytes": 31329,
+                "peakBytes": 39170,
+                "deltaBytes": -7841
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 246768,
+            "requestsPerSocketWrite": 9.99974469947481,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 707,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15079.966287999996,
+            "cpuMs": 15004.79,
+            "cpuCorePct": 99.50148238686835,
+            "cpuHostPct": 3.553624370959584,
+            "eluPct": 99.53146605961308,
+            "eventLoopDelayMs": {
+              "p50": 24.100863,
+              "p90": 24.363007,
+              "p99": 24.608767,
+              "max": 24.707071
+            },
+            "memMB": {
+              "rssPeak": 66.83203125,
+              "heapUsedPeak": 8.737663269042969,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0577702702702747,
+              2.0299999999999967,
+              1.6560810810810795
+            ],
+            "loadPeak": [
+              2.07,
+              2.03,
+              1.66
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2484780,
+          "durationMs": 15003.950986999902,
+          "rps": 165608.378896527,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.577170929233178,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16662.935,
+            "cpuCorePct": 111.05698102078259,
+            "cpuPerMillionRequestsMs": 6706.000128784038,
+            "parentEluPct": 0.08864583700150377,
+            "maxWorkerEluPct": 27.005212900378517,
+            "meanWorkerEluPct": 25.743539105493983,
+            "workerHeapUsedPeakBytes": 46916832,
+            "workerExternalPeakBytes": 33738208,
+            "workerArrayBuffersPeakBytes": 19957000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176623616,
+                "endBytes": 162562048,
+                "peakBytes": 181714944,
+                "deltaBytes": -14061568
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9878456,
+                "endBytes": 10113728,
+                "peakBytes": 10113728,
+                "deltaBytes": 235272
+              },
+              "external": {
+                "startBytes": 2170144,
+                "endBytes": 2170144,
+                "peakBytes": 2170144,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39171,
+                "endBytes": 39171,
+                "peakBytes": 39171,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 248533,
+            "requestsPerSocketWrite": 9.999891362515239,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 523,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15083.493470000016,
+            "cpuMs": 15004.587,
+            "cpuCorePct": 99.47686873629802,
+            "cpuHostPct": 3.552745312010644,
+            "eluPct": 99.50600437510121,
+            "eventLoopDelayMs": {
+              "p50": 23.953407,
+              "p90": 24.199167,
+              "p99": 24.395775,
+              "max": 24.821759
+            },
+            "memMB": {
+              "rssPeak": 69.96875,
+              "heapUsedPeak": 8.855178833007812,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.0438513513513508,
+              2.0299999999999967,
+              1.6599999999999973
+            ],
+            "loadPeak": [
+              2.05,
+              2.03,
+              1.66
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 11,
+      "candidateSlot": 2,
+      "rows": [
+        {
+          "id": "candidate-slot-2",
+          "role": "candidate",
+          "slot": 2,
+          "fw": "core-batch",
+          "completed": 2498750,
+          "durationMs": 15005.181959999958,
+          "rps": 166525.8046627518,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16431.797,
+            "cpuCorePct": 109.50748244041984,
+            "cpuPerMillionRequestsMs": 6576.0068034016995,
+            "parentEluPct": 0.08829428983877494,
+            "maxWorkerEluPct": 25.826695872337936,
+            "meanWorkerEluPct": 25.28104878774094,
+            "workerHeapUsedPeakBytes": 47613824,
+            "workerExternalPeakBytes": 33706708,
+            "workerArrayBuffersPeakBytes": 20076000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175308800,
+                "endBytes": 176926720,
+                "peakBytes": 181202944,
+                "deltaBytes": 1617920
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9645424,
+                "endBytes": 9862192,
+                "peakBytes": 9862192,
+                "deltaBytes": 216768
+              },
+              "external": {
+                "startBytes": 2162894,
+                "endBytes": 2162894,
+                "peakBytes": 2162894,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31921,
+                "endBytes": 31921,
+                "peakBytes": 31921,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 249943,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 680,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15075.641613000014,
+            "cpuMs": 15005.174,
+            "cpuCorePct": 99.53257304193774,
+            "cpuHostPct": 3.5547347514977767,
+            "eluPct": 99.56069667741653,
+            "eventLoopDelayMs": {
+              "p50": 23.789567,
+              "p90": 24.035327,
+              "p99": 24.297471,
+              "max": 24.510463
+            },
+            "memMB": {
+              "rssPeak": 67.26953125,
+              "heapUsedPeak": 8.856109619140625,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.1071333333333415,
+              2.0395333333333343,
+              1.669533333333328
+            ],
+            "loadPeak": [
+              2.12,
+              2.04,
+              1.67
+            ]
+          }
+        },
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2503110,
+          "durationMs": 15004.323310000007,
+          "rps": 166825.91732289182,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16513.916,
+            "cpuCorePct": 110.06105146370639,
+            "cpuPerMillionRequestsMs": 6597.359285049399,
+            "parentEluPct": 0.1029837039791912,
+            "maxWorkerEluPct": 26.763340563196707,
+            "meanWorkerEluPct": 25.58744751580761,
+            "workerHeapUsedPeakBytes": 47082728,
+            "workerExternalPeakBytes": 33857208,
+            "workerArrayBuffersPeakBytes": 20090000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 174485504,
+                "endBytes": 166309888,
+                "peakBytes": 182706176,
+                "deltaBytes": -8175616
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 10245784,
+                "endBytes": 9729608,
+                "peakBytes": 10245784,
+                "deltaBytes": -516176
+              },
+              "external": {
+                "startBytes": 2170737,
+                "endBytes": 2170737,
+                "peakBytes": 2170737,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39764,
+                "endBytes": 31329,
+                "peakBytes": 39764,
+                "deltaBytes": -8435
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 250387,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 760,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15074.746214999992,
+            "cpuMs": 15004.742,
+            "cpuCorePct": 99.53561928007561,
+            "cpuHostPct": 3.5548435457169862,
+            "eluPct": 99.56478422741914,
+            "eventLoopDelayMs": {
+              "p50": 23.724031,
+              "p90": 24.035327,
+              "p99": 24.330239,
+              "max": 24.952831
+            },
+            "memMB": {
+              "rssPeak": 70.40625,
+              "heapUsedPeak": 8.8709716796875,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.108133333333342,
+              2.0459999999999994,
+              1.682600000000002
+            ],
+            "loadPeak": [
+              2.16,
+              2.06,
+              1.69
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-b",
+          "completed": 2510760,
+          "durationMs": 15005.688797999988,
+          "rps": 167320.54314858528,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.577170929233178,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16785.984,
+            "cpuCorePct": 111.8641351687721,
+            "cpuPerMillionRequestsMs": 6685.618697127563,
+            "parentEluPct": 0.09279451300805494,
+            "maxWorkerEluPct": 27.320055001379185,
+            "meanWorkerEluPct": 25.973816001256207,
+            "workerHeapUsedPeakBytes": 47242824,
+            "workerExternalPeakBytes": 33661208,
+            "workerArrayBuffersPeakBytes": 20027000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 177430528,
+                "endBytes": 172806144,
+                "peakBytes": 183324672,
+                "deltaBytes": -4624384
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 10097240,
+                "endBytes": 9595792,
+                "peakBytes": 10263152,
+                "deltaBytes": -501448
+              },
+              "external": {
+                "startBytes": 2170139,
+                "endBytes": 2170139,
+                "peakBytes": 2170139,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39166,
+                "endBytes": 31329,
+                "peakBytes": 39166,
+                "deltaBytes": -7837
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 251153,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 770,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15074.305986000021,
+            "cpuMs": 15003.366,
+            "cpuCorePct": 99.52939799639263,
+            "cpuHostPct": 3.554621357014023,
+            "eluPct": 99.55515268274164,
+            "eventLoopDelayMs": {
+              "p50": 23.674879,
+              "p90": 23.986175,
+              "p99": 24.215551,
+              "max": 24.821759
+            },
+            "memMB": {
+              "rssPeak": 69.3515625,
+              "heapUsedPeak": 8.859664916992188,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.131476510067114,
+              2.0569798657718166,
+              1.6899999999999982
+            ],
+            "loadPeak": [
+              2.16,
+              2.06,
+              1.69
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "run": 12,
+      "candidateSlot": 2,
+      "rows": [
+        {
+          "id": "control-a-slot-0",
+          "role": "control",
+          "slot": 0,
+          "fw": "core-off-a",
+          "completed": 2519400,
+          "durationMs": 15006.762871999992,
+          "rps": 167884.30799428181,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.350167577679585,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16214.299,
+            "cpuCorePct": 108.04661297242899,
+            "cpuPerMillionRequestsMs": 6435.777963007065,
+            "parentEluPct": 0.09283186475629768,
+            "maxWorkerEluPct": 26.50514996263331,
+            "meanWorkerEluPct": 25.329596802130347,
+            "workerHeapUsedPeakBytes": 48275528,
+            "workerExternalPeakBytes": 33759208,
+            "workerArrayBuffersPeakBytes": 20065500,
+            "processMemory": {
+              "rss": {
+                "startBytes": 177750016,
+                "endBytes": 173662208,
+                "peakBytes": 185753600,
+                "deltaBytes": -4087808
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9974320,
+                "endBytes": 10203424,
+                "peakBytes": 10203424,
+                "deltaBytes": 229104
+              },
+              "external": {
+                "startBytes": 2170143,
+                "endBytes": 2170143,
+                "peakBytes": 2170143,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39170,
+                "endBytes": 39170,
+                "peakBytes": 39170,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 251993,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 530,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15084.684233999986,
+            "cpuMs": 15005.265,
+            "cpuCorePct": 99.4735107956653,
+            "cpuHostPct": 3.5526253855594754,
+            "eluPct": 99.50212153790544,
+            "eventLoopDelayMs": {
+              "p50": 23.576575,
+              "p90": 23.871487,
+              "p99": 24.182783,
+              "max": 24.641535
+            },
+            "memMB": {
+              "rssPeak": 70.84375,
+              "heapUsedPeak": 8.883674621582031,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.53362416107383,
+              2.146644295302012,
+              1.7286577181208012
+            ],
+            "loadPeak": [
+              2.59,
+              2.15,
+              1.73
+            ]
+          }
+        },
+        {
+          "id": "candidate-slot-2",
+          "role": "candidate",
+          "slot": 2,
+          "fw": "core-batch",
+          "completed": 2477790,
+          "durationMs": 15003.953242999967,
+          "rps": 165142.47677731217,
+          "latencyP50Ms": 6.022776917224663,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.808714347817839,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 16595.32,
+            "cpuCorePct": 110.60631642358976,
+            "cpuPerMillionRequestsMs": 6697.629742633556,
+            "parentEluPct": 0.08747439055922733,
+            "maxWorkerEluPct": 26.674858412271757,
+            "meanWorkerEluPct": 25.566129211583096,
+            "workerHeapUsedPeakBytes": 46895984,
+            "workerExternalPeakBytes": 33888708,
+            "workerArrayBuffersPeakBytes": 20174000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 175579136,
+                "endBytes": 180006912,
+                "peakBytes": 183869440,
+                "deltaBytes": 4427776
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 11644928,
+                "peakBytes": 11644928,
+                "deltaBytes": 0
+              },
+              "heapUsed": {
+                "startBytes": 9745088,
+                "endBytes": 9959016,
+                "peakBytes": 9959016,
+                "deltaBytes": 213928
+              },
+              "external": {
+                "startBytes": 2162891,
+                "endBytes": 2162891,
+                "peakBytes": 2162891,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 31918,
+                "endBytes": 31918,
+                "peakBytes": 31918,
+                "deltaBytes": 0
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 247856,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 770,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15073.888480000023,
+            "cpuMs": 15002.933,
+            "cpuCorePct": 99.5292821749732,
+            "cpuHostPct": 3.5546172205347566,
+            "eluPct": 99.55740342502311,
+            "eventLoopDelayMs": {
+              "p50": 23.953407,
+              "p90": 24.215551,
+              "p99": 24.477695,
+              "max": 24.870911
+            },
+            "memMB": {
+              "rssPeak": 67.70703125,
+              "heapUsedPeak": 8.857978820800781,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.8866442953020126,
+              2.2406711409395994,
+              1.7622818791946326
+            ],
+            "loadPeak": [
+              2.94,
+              2.25,
+              1.77
+            ]
+          }
+        },
+        {
+          "id": "control-b-slot-1",
+          "role": "control",
+          "slot": 1,
+          "fw": "core-off-b",
+          "completed": 2482250,
+          "durationMs": 15006.663786999998,
+          "rps": 165409.84959963776,
+          "latencyP50Ms": 5.904683252181041,
+          "latencyP95Ms": 6.143232455569155,
+          "latencyP99Ms": 11.808714347817839,
+          "errors": 0,
+          "non2xx": 0,
+          "loadGenerator": {
+            "cpuMs": 17168,
+            "cpuCorePct": 114.4025097361902,
+            "cpuPerMillionRequestsMs": 6916.305770973915,
+            "parentEluPct": 0.1053872104949966,
+            "maxWorkerEluPct": 27.800800842984668,
+            "meanWorkerEluPct": 26.66347324483209,
+            "workerHeapUsedPeakBytes": 47627832,
+            "workerExternalPeakBytes": 33615708,
+            "workerArrayBuffersPeakBytes": 19943000,
+            "processMemory": {
+              "rss": {
+                "startBytes": 176254976,
+                "endBytes": 170684416,
+                "peakBytes": 183078912,
+                "deltaBytes": -5570560
+              },
+              "heapTotal": {
+                "startBytes": 11644928,
+                "endBytes": 12693504,
+                "peakBytes": 12693504,
+                "deltaBytes": 1048576
+              },
+              "heapUsed": {
+                "startBytes": 10343752,
+                "endBytes": 9853696,
+                "peakBytes": 10343752,
+                "deltaBytes": -490056
+              },
+              "external": {
+                "startBytes": 2170734,
+                "endBytes": 2170734,
+                "peakBytes": 2170734,
+                "deltaBytes": 0
+              },
+              "arrayBuffers": {
+                "startBytes": 39761,
+                "endBytes": 31329,
+                "peakBytes": 39761,
+                "deltaBytes": -8432
+              }
+            },
+            "saturated": false
+          },
+          "transport": {
+            "socketWriteCalls": 248284,
+            "requestsPerSocketWrite": 10,
+            "backpressureEvents": 0,
+            "drainWaitMs": 0,
+            "inFlightAtStop": 590,
+            "rateDropped": 0,
+            "meanScheduleLagMs": null,
+            "maxScheduleLagMs": 0
+          },
+          "metrics": {
+            "wallMs": 15077.964549999975,
+            "cpuMs": 15004.405,
+            "cpuCorePct": 99.51213872564799,
+            "cpuHostPct": 3.554004954487428,
+            "eluPct": 99.53953434925687,
+            "eventLoopDelayMs": {
+              "p50": 23.904255,
+              "p90": 24.150015,
+              "p99": 24.363007,
+              "max": 24.903679
+            },
+            "memMB": {
+              "rssPeak": 69.7890625,
+              "heapUsedPeak": 8.911521911621094,
+              "externalPeak": 1.9989452362060547,
+              "arrayBuffersPeak": 0.02203369140625
+            },
+            "loadAvg": [
+              2.7473825503355758,
+              2.243557046979871,
+              1.7731543624161084
+            ],
+            "loadPeak": [
+              2.88,
+              2.25,
+              1.78
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "paired": {
+    "controlThroughputDeltaPct": {
+      "median": 0.174139478573019,
+      "q1": -1.7129869610642172,
+      "q3": 1.8225979675732396,
+      "values": [
+        -7.938910678248837,
+        -1.6665124514313474,
+        8.20911704854817,
+        7.907754814534316,
+        0.0517867611905958,
+        -2.189960636651821,
+        1.6280684338632605,
+        1.5232042479808134,
+        2.4061865687031765,
+        -1.8524104899628266,
+        0.29649219595544224,
+        -1.4739068970807772
+      ]
+    },
+    "candidateThroughputDeltaPct": {
+      "median": -0.6152616944743183,
+      "q1": -2.4568817840095174,
+      "q3": 1.9449487885929373,
+      "values": [
+        4.264383703949657,
+        4.975051110906572,
+        1.171803816807364,
+        8.319458611193086,
+        -6.991799885862475,
+        -4.725252875948314,
+        -2.1525002446971495,
+        -3.3700264019466206,
+        0.37173933669858605,
+        -1.647627446599253,
+        -0.32765606567513006,
+        -0.9028673232735065
+      ]
+    },
+    "candidateCpuPerRequestDeltaPct": {
+      "median": 0.6230658348792408,
+      "q1": -2.040209326390878,
+      "q3": 2.5064399742032224,
+      "values": [
+        -4.2481330045718275,
+        -4.7487085882012305,
+        -1.3042347669972274,
+        -7.833666157586553,
+        7.5252547426547896,
+        4.952778410864504,
+        2.1762313217295834,
+        3.4970659316241397,
+        -0.3988728876805789,
+        1.674245486403285,
+        0.33481228623375825,
+        0.9113193835247234
+      ]
+    },
+    "candidateLatencyP95DeltaPct": {
+      "median": 0,
+      "q1": -2.517832801813812,
+      "q3": 3.2674257425742574,
+      "values": [
+        -3.958455962378154,
+        -4.834774134852935,
+        -2.0376250816256984,
+        -7.687866169144704,
+        8.243215999999986,
+        5.070099009900996,
+        3.0099009900990055,
+        4.040000000000014,
+        -0.01960399921584826,
+        3.0099009900990032,
+        0,
+        0
+      ]
+    },
+    "candidateLatencyP99DeltaPct": {
+      "median": 1.4652572475907397,
+      "q1": -1.0191891474598274,
+      "q3": 7.407921069213792,
+      "values": [
+        -5.841623492527604,
+        0.7529557531055752,
+        -1.1064595601363432,
+        -7.687866169144719,
+        25.615392193035586,
+        8.243216000000016,
+        7.129489425618384,
+        5.028911201586664,
+        0.9505105743816507,
+        10.84858231120647,
+        -0.9900990099009889,
+        1.980003920799829
+      ]
+    },
+    "runs": [
+      {
+        "run": 1,
+        "controlThroughputDeltaPct": -7.938910678248837,
+        "candidateThroughputDeltaPct": 4.264383703949657,
+        "candidateCpuPerRequestDeltaPct": -4.2481330045718275,
+        "candidateLatencyP95DeltaPct": -3.958455962378154,
+        "candidateLatencyP99DeltaPct": -5.841623492527604
+      },
+      {
+        "run": 2,
+        "controlThroughputDeltaPct": -1.6665124514313474,
+        "candidateThroughputDeltaPct": 4.975051110906572,
+        "candidateCpuPerRequestDeltaPct": -4.7487085882012305,
+        "candidateLatencyP95DeltaPct": -4.834774134852935,
+        "candidateLatencyP99DeltaPct": 0.7529557531055752
+      },
+      {
+        "run": 3,
+        "controlThroughputDeltaPct": 8.20911704854817,
+        "candidateThroughputDeltaPct": 1.171803816807364,
+        "candidateCpuPerRequestDeltaPct": -1.3042347669972274,
+        "candidateLatencyP95DeltaPct": -2.0376250816256984,
+        "candidateLatencyP99DeltaPct": -1.1064595601363432
+      },
+      {
+        "run": 4,
+        "controlThroughputDeltaPct": 7.907754814534316,
+        "candidateThroughputDeltaPct": 8.319458611193086,
+        "candidateCpuPerRequestDeltaPct": -7.833666157586553,
+        "candidateLatencyP95DeltaPct": -7.687866169144704,
+        "candidateLatencyP99DeltaPct": -7.687866169144719
+      },
+      {
+        "run": 5,
+        "controlThroughputDeltaPct": 0.0517867611905958,
+        "candidateThroughputDeltaPct": -6.991799885862475,
+        "candidateCpuPerRequestDeltaPct": 7.5252547426547896,
+        "candidateLatencyP95DeltaPct": 8.243215999999986,
+        "candidateLatencyP99DeltaPct": 25.615392193035586
+      },
+      {
+        "run": 6,
+        "controlThroughputDeltaPct": -2.189960636651821,
+        "candidateThroughputDeltaPct": -4.725252875948314,
+        "candidateCpuPerRequestDeltaPct": 4.952778410864504,
+        "candidateLatencyP95DeltaPct": 5.070099009900996,
+        "candidateLatencyP99DeltaPct": 8.243216000000016
+      },
+      {
+        "run": 7,
+        "controlThroughputDeltaPct": 1.6280684338632605,
+        "candidateThroughputDeltaPct": -2.1525002446971495,
+        "candidateCpuPerRequestDeltaPct": 2.1762313217295834,
+        "candidateLatencyP95DeltaPct": 3.0099009900990055,
+        "candidateLatencyP99DeltaPct": 7.129489425618384
+      },
+      {
+        "run": 8,
+        "controlThroughputDeltaPct": 1.5232042479808134,
+        "candidateThroughputDeltaPct": -3.3700264019466206,
+        "candidateCpuPerRequestDeltaPct": 3.4970659316241397,
+        "candidateLatencyP95DeltaPct": 4.040000000000014,
+        "candidateLatencyP99DeltaPct": 5.028911201586664
+      },
+      {
+        "run": 9,
+        "controlThroughputDeltaPct": 2.4061865687031765,
+        "candidateThroughputDeltaPct": 0.37173933669858605,
+        "candidateCpuPerRequestDeltaPct": -0.3988728876805789,
+        "candidateLatencyP95DeltaPct": -0.01960399921584826,
+        "candidateLatencyP99DeltaPct": 0.9505105743816507
+      },
+      {
+        "run": 10,
+        "controlThroughputDeltaPct": -1.8524104899628266,
+        "candidateThroughputDeltaPct": -1.647627446599253,
+        "candidateCpuPerRequestDeltaPct": 1.674245486403285,
+        "candidateLatencyP95DeltaPct": 3.0099009900990032,
+        "candidateLatencyP99DeltaPct": 10.84858231120647
+      },
+      {
+        "run": 11,
+        "controlThroughputDeltaPct": 0.29649219595544224,
+        "candidateThroughputDeltaPct": -0.32765606567513006,
+        "candidateCpuPerRequestDeltaPct": 0.33481228623375825,
+        "candidateLatencyP95DeltaPct": 0,
+        "candidateLatencyP99DeltaPct": -0.9900990099009889
+      },
+      {
+        "run": 12,
+        "controlThroughputDeltaPct": -1.4739068970807772,
+        "candidateThroughputDeltaPct": -0.9028673232735065,
+        "candidateCpuPerRequestDeltaPct": 0.9113193835247234,
+        "candidateLatencyP95DeltaPct": 0,
+        "candidateLatencyP99DeltaPct": 1.980003920799829
+      }
+    ]
+  }
+}

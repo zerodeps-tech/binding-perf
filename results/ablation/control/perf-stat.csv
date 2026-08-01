@@ -1,0 +1,8 @@
+# started on Sat Aug  1 21:21:10 2026
+
+70120676554,,cycles:u,19957510601,66.00,,
+93416895784,,instructions:u,24948157295,83.00,1.33,insn per cycle
+19805395684,,branches:u,24941573219,83.00,,
+115240122,,branch-misses:u,24943669927,83.00,0.58,of all branches
+1180022468,,cache-references:u,24945795540,83.00,,
+171611,,cache-misses:u,24943295223,83.00,0.01,of all cache refs

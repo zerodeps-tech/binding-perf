@@ -1,0 +1,8 @@
+# started on Sun Jul 26 22:48:26 2026
+
+72847317492,,cycles:u,19951834666,66.00,,
+99339880107,,instructions:u,24941062285,83.00,1.36,insn per cycle
+19683257759,,branches:u,24941665104,83.00,,
+80507099,,branch-misses:u,24944334917,83.00,0.41,of all branches
+1339314125,,cache-references:u,24941895325,83.00,,
+145492,,cache-misses:u,24940803126,83.00,0.01,of all cache refs

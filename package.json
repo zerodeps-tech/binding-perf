@@ -1,0 +1,39 @@
+{
+  "name": "binding-perf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reproducible benchmark artifacts for native V8 binding fast paths in swm-core and swm-uws.",
+  "type": "module",
+  "author": "zero_deps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerodeps-tech/binding-perf"
+  },
+  "homepage": "https://github.com/zerodeps-tech/binding-perf#readme",
+  "keywords": [
+    "nodejs",
+    "v8",
+    "cpp",
+    "native-addon",
+    "benchmark",
+    "performance"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "benchmark:all": "bash scripts/run-all-benchmarks.sh",
+    "check": "node --check harness/native-fast-path-triad.js && node --check harness/scenarios.js && node --check harness/swm-core-server.js && node --check harness/swm-core-target.js && node --check scripts/check-reports.js && node --check scripts/profile-core-binding.js && node --check scripts/summarize-ablation.js && node --check scripts/summarize-benchkit.js && node --check scripts/write-ablation-metadata.js && bash -n scripts/run-all-benchmarks.sh && bash -n scripts/run-snapshot-ablation.sh",
+    "profile:control": "taskset -c 3-6 node scripts/profile-core-binding.js control",
+    "profile:snapshot": "taskset -c 3-6 node scripts/profile-core-binding.js snapshot",
+    "profile:ablation": "bash scripts/run-snapshot-ablation.sh",
+    "report:ablation": "node scripts/summarize-ablation.js results/ablation results/request-snapshot-ablation.md",
+    "report:benchkit": "node scripts/summarize-benchkit.js results/benchkit results/benchkit-report.md",
+    "report:check": "node scripts/check-reports.js"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "devDependencies": {
+    "@swarmmachina/benchkit": "0.2.0",
+    "@swarmmachina/swm-core": "4.1.1"
+  }
+}

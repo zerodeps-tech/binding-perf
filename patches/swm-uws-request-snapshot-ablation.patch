@@ -1,0 +1,237 @@
+diff --git a/src/binding.cpp b/src/binding.cpp
+index 3d4c75e..ef84376 100644
+--- a/src/binding.cpp
++++ b/src/binding.cpp
+@@ -5,6 +5,7 @@
+ #include <algorithm>
+ #include <array>
+ #include <cmath>
++#include <cstdlib>
+ #include <cstring>
+ #include <limits>
+ #include <memory>
+@@ -54,6 +55,40 @@ enum class HttpMethod {
+     Any,
+ };
+
++enum class SnapshotAblationMode {
++    Production,
++    Static,
++    Shape,
++    Names,
++    Method,
++    Url,
++    Query,
++    Headers,
++    Params,
++};
++
++SnapshotAblationMode ReadSnapshotAblationMode() {
++    const char *value = std::getenv("SWM_UWS_SNAPSHOT_ABLATION");
++    if (!value || !*value || std::strcmp(value, "production") == 0) {
++        return SnapshotAblationMode::Production;
++    }
++    if (std::strcmp(value, "static") == 0) return SnapshotAblationMode::Static;
++    if (std::strcmp(value, "shape") == 0) return SnapshotAblationMode::Shape;
++    if (std::strcmp(value, "names") == 0) return SnapshotAblationMode::Names;
++    if (std::strcmp(value, "method") == 0) return SnapshotAblationMode::Method;
++    if (std::strcmp(value, "url") == 0) return SnapshotAblationMode::Url;
++    if (std::strcmp(value, "query") == 0) return SnapshotAblationMode::Query;
++    if (std::strcmp(value, "headers") == 0) return SnapshotAblationMode::Headers;
++    if (std::strcmp(value, "params") == 0) return SnapshotAblationMode::Params;
++    return SnapshotAblationMode::Production;
++}
++
++bool SnapshotModeAtLeast(
++    SnapshotAblationMode actual,
++    SnapshotAblationMode expected) {
++    return static_cast<int>(actual) >= static_cast<int>(expected);
++}
++
+ struct PerContextData;
+
+ struct ValidatedStringCache {
+@@ -82,6 +117,10 @@ struct PerContextData {
+     Global<Object> responseTemplate;
+     Global<Object> requestTemplate;
+     Global<Object> requestHeadersTemplate;
++    Global<Object> snapshotStatic;
++    std::array<Global<String>, 5> snapshotKeys;
++    SnapshotAblationMode snapshotAblationMode =
++        SnapshotAblationMode::Production;
+     Global<Object> socketTemplate;
+     Global<Function> appConstructor;
+     ValidatedStringCache responseHeaderNameValidation;
+@@ -1402,9 +1441,99 @@ void RequestSnapshot(const FunctionCallbackInfo<Value> &args) {
+
+     Isolate *isolate = args.GetIsolate();
+     Local<Context> context = isolate->GetCurrentContext();
+-    Local<Object> snapshot = Object::New(isolate);
+     auto *contextData = static_cast<PerContextData *>(
+         args.Data().As<External>()->Value());
++
++    if (contextData->snapshotAblationMode == SnapshotAblationMode::Static) {
++        args.GetReturnValue().Set(contextData->snapshotStatic.Get(isolate));
++        return;
++    }
++
++    if (contextData->snapshotAblationMode != SnapshotAblationMode::Production) {
++        const SnapshotAblationMode mode = contextData->snapshotAblationMode;
++        Local<Object> snapshot = Object::New(isolate);
++        Local<Object> headers =
++            contextData->requestHeadersTemplate.Get(isolate)->Clone();
++        Local<Array> params = Array::New(isolate, static_cast<int>(paramCount));
++
++        if (SnapshotModeAtLeast(mode, SnapshotAblationMode::Headers)) {
++            for (const auto &[name, value] : *request) {
++                if (!headers
++                         ->CreateDataProperty(
++                             context,
++                             NewString(isolate, name),
++                             NewString(isolate, value))
++                         .FromMaybe(false)) {
++                    return;
++                }
++            }
++        }
++
++        if (SnapshotModeAtLeast(mode, SnapshotAblationMode::Params)) {
++            for (unsigned int index = 0; index < paramCount; index++) {
++                std::string_view value =
++                    request->getParameter(static_cast<unsigned short>(index));
++                if (value.data() &&
++                    !params
++                         ->Set(context, index, NewString(isolate, value))
++                         .FromMaybe(false)) {
++                    return;
++                }
++            }
++        }
++
++        std::array<Local<String>, 5> keys;
++        if (SnapshotModeAtLeast(mode, SnapshotAblationMode::Names)) {
++            keys = {
++                NewString(isolate, "method"),
++                NewString(isolate, "url"),
++                NewString(isolate, "query"),
++                NewString(isolate, "headers"),
++                NewString(isolate, "params"),
++            };
++        } else {
++            for (size_t index = 0; index < keys.size(); index++) {
++                keys[index] = contextData->snapshotKeys[index].Get(isolate);
++            }
++        }
++
++        Local<String> empty = String::Empty(isolate);
++        Local<Value> method = empty;
++        Local<Value> url = empty;
++        Local<Value> query = empty;
++        if (SnapshotModeAtLeast(mode, SnapshotAblationMode::Method)) {
++            method = NewString(isolate, request->getMethod());
++        }
++        if (SnapshotModeAtLeast(mode, SnapshotAblationMode::Url)) {
++            url = NewString(isolate, request->getUrl());
++        }
++        if (SnapshotModeAtLeast(mode, SnapshotAblationMode::Query)) {
++            query = NewString(isolate, request->getQuery());
++        }
++
++        if (!snapshot
++                 ->CreateDataProperty(context, keys[0], method)
++                 .FromMaybe(false) ||
++            !snapshot
++                 ->CreateDataProperty(context, keys[1], url)
++                 .FromMaybe(false) ||
++            !snapshot
++                 ->CreateDataProperty(context, keys[2], query)
++                 .FromMaybe(false) ||
++            !snapshot
++                 ->CreateDataProperty(context, keys[3], headers)
++                 .FromMaybe(false) ||
++            !snapshot
++                 ->CreateDataProperty(context, keys[4], params)
++                 .FromMaybe(false)) {
++            return;
++        }
++
++        args.GetReturnValue().Set(snapshot);
++        return;
++    }
++
++    Local<Object> snapshot = Object::New(isolate);
+     Local<Object> headers = contextData->requestHeadersTemplate.Get(isolate)->Clone();
+
+     for (const auto &[name, value] : *request) {
+@@ -2851,6 +2980,7 @@ void SetPrototypeMethod(
+ PerContextData *Initialize(Isolate *isolate, Local<Object> exports) {
+     auto *context = new PerContextData;
+     context->isolate = isolate;
++    context->snapshotAblationMode = ReadSnapshotAblationMode();
+     Local<External> contextExternal = External::New(isolate, context);
+
+     Local<FunctionTemplate> response = FunctionTemplate::New(isolate);
+@@ -2939,6 +3069,54 @@ PerContextData *Initialize(Isolate *isolate, Local<Object> exports) {
+     context->requestHeadersTemplate.Reset(
+         isolate,
+         Object::New(isolate, Null(isolate), nullptr, nullptr, 0));
++    const std::array<std::string_view, 5> snapshotKeyNames = {
++        "method",
++        "url",
++        "query",
++        "headers",
++        "params",
++    };
++    for (size_t index = 0; index < snapshotKeyNames.size(); index++) {
++        context->snapshotKeys[index].Reset(
++            isolate,
++            NewString(isolate, snapshotKeyNames[index]));
++    }
++    Local<Object> staticSnapshot = Object::New(isolate);
++    Local<Object> staticHeaders =
++        context->requestHeadersTemplate.Get(isolate)->Clone();
++    Local<Array> staticParams = Array::New(isolate, 0);
++    Local<String> empty = String::Empty(isolate);
++    staticSnapshot
++        ->CreateDataProperty(
++            isolate->GetCurrentContext(),
++            context->snapshotKeys[0].Get(isolate),
++            empty)
++        .ToChecked();
++    staticSnapshot
++        ->CreateDataProperty(
++            isolate->GetCurrentContext(),
++            context->snapshotKeys[1].Get(isolate),
++            empty)
++        .ToChecked();
++    staticSnapshot
++        ->CreateDataProperty(
++            isolate->GetCurrentContext(),
++            context->snapshotKeys[2].Get(isolate),
++            empty)
++        .ToChecked();
++    staticSnapshot
++        ->CreateDataProperty(
++            isolate->GetCurrentContext(),
++            context->snapshotKeys[3].Get(isolate),
++            staticHeaders)
++        .ToChecked();
++    staticSnapshot
++        ->CreateDataProperty(
++            isolate->GetCurrentContext(),
++            context->snapshotKeys[4].Get(isolate),
++            staticParams)
++        .ToChecked();
++    context->snapshotStatic.Reset(isolate, staticSnapshot);
+     context->requestTemplate.Reset(
+         isolate,
+         request->GetFunction(isolate->GetCurrentContext())
+@@ -3074,6 +3252,8 @@ void InitializeModule(
+             contextData->responseTemplate.Reset();
+             contextData->requestTemplate.Reset();
+             contextData->requestHeadersTemplate.Reset();
++            contextData->snapshotStatic.Reset();
++            for (auto &key : contextData->snapshotKeys) key.Reset();
+             contextData->socketTemplate.Reset();
+             contextData->appConstructor.Reset();
+             uWS::Loop::get()->free();

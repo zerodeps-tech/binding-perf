@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-08-01T18:36:31.011Z",
+  "system": {
+    "node": "v24.17.0",
+    "platform": "linux-x64",
+    "cpu": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+    "logicalCpus": 28
+  },
+  "sourceRef": "v0.5.7",
+  "sourceCommit": "439e01afc01ed31e39ae8b1a91a58017d205b276",
+  "nativeBinarySha256": "99c25186439218f12b7b982633efda236dbc822fc2fb0a0819ddef4a27debcac",
+  "cpuGovernor": "performance",
+  "parameters": {
+    "connections": 100,
+    "pipelining": 10,
+    "workers": 4,
+    "warmupSeconds": 30,
+    "durationSeconds": 30,
+    "serverCpu": "2",
+    "clientCpuAffinity": "3-6"
+  }
+}
